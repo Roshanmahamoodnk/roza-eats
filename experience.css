@@ -18,3 +18,5 @@ html[lang=ml] .exp-photo-stamp strong{font:600 17px/1.6 var(--font);text-align:c
 @media(max-width:600px){html[lang=ml] .menu-studio-page .builder-heading h2{font-size:25px;line-height:1.55}}
 
 html.motion-off{scroll-behavior:auto!important}
+
+.exp-primary:hover{background:var(--deep);color:var(--cream)}

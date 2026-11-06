@@ -98,3 +98,7 @@ The first ordinary `git push origin main` returned `fatal: could not read Userna
 The user then connected GitHub during the same turn. Publication resumed through the connected repository API, preserving the existing tree and using a checked parent/head for a single atomic branch update. [GitHub's authentication guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github) distinguishes public reads from authenticated access. No credentials were guessed, copied from another account, or exposed.
 
 Next resumable step: inspect the latest branch and this redesign's Pages run, finish any pending deployment, and verify the public homepage/assessment. The final task result records the observed deployment outcome. Do not push optional follow-up documentation while Pages is still running. All outstanding launch inputs remain as listed above.
+
+### Final live hover correction
+
+The first redesign deployment completed successfully (commit `e7eba33a0665de42cd7c19f9ae0468c6ad648fed`, Pages run `42279666345`). The final public browser check then exposed a hero-button hover contrast issue: the inherited generic button hover turned its background dark while the orange button retained dark text. Added an explicit light text colour for that hover state and bumped the shared stylesheet URL. This is a bounded repair after the first deployment finished, not an optional push during an active deployment. Verify the latest Pages run and the public button before closing the task.
