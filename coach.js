@@ -24,10 +24,10 @@
  function label(key,value){var o=(names[key]||[]).find(function(x){return x[0]===value;});return o?L(o[1],o[2]):'';}
  function labelEn(key,value){var o=(names[key]||[]).find(function(x){return x[0]===value;});return o?o[1]:'';}
  function choices(key,multi,two){
-  return '<div class="choice-list'+(two?' two-col':'')+'" role="group" aria-label="'+esc(key)+'">'+names[key].map(function(o){var yes=multi?answers[key].includes(o[0]):answers[key]===o[0];return '<button type="button" class="quiz-choice'+(yes?' selected':'')+'" data-answer="'+key+'" data-value="'+o[0]+'"'+(multi?' data-multi="true"':'')+' aria-pressed="'+yes+'"><span class="choice-mark" aria-hidden="true">'+(yes?'✓':'')+'</span><span><strong>'+L(o[1],o[2])+'</strong>'+(o[3]?'<small>'+L(o[3],o[4])+'</small>':'')+'</span></button>';}).join('')+'</div>';
+  return '<div class="choice-list'+(two?' two-col':'')+'" data-choice-group="'+esc(key)+'" role="group" aria-label="'+esc(key)+'">'+names[key].map(function(o){var yes=multi?answers[key].includes(o[0]):answers[key]===o[0];return '<button type="button" class="quiz-choice'+(yes?' selected':'')+'" data-answer="'+key+'" data-value="'+o[0]+'"'+(multi?' data-multi="true"':'')+' aria-pressed="'+yes+'"><span class="choice-mark" aria-hidden="true">'+(yes?'✓':'')+'</span><span><strong>'+L(o[1],o[2])+'</strong>'+(o[3]?'<small>'+L(o[3],o[4])+'</small>':'')+'</span></button>';}).join('')+'</div>';
  }
- function why(en,ml){return '<div class="why-ask"><b aria-hidden="true">↳</b><span>'+L(en,ml)+'</span></div>';}
- function heading(n,title,ml,intro,introMl){return '<span class="question-label">'+n+'</span><h2 id="question-heading" tabindex="-1">'+L(title,ml)+'</h2><p class="question-intro">'+L(intro,introMl)+'</p>';}
+ function why(en,ml){return '<details class="why-ask"><summary>'+L('Why we ask','എന്തിനാണ് ചോദിക്കുന്നത്?')+'</summary><p>'+L(en,ml)+'</p></details>';}
+ function heading(n,title,ml,intro,introMl){return '<span class="question-label">'+L(n,['01 / നിങ്ങളുടെ പ്രദേശം','02 / നിങ്ങളുടെ ലക്ഷ്യം','03 / നിങ്ങളുടെ ദിവസം','04 / നിങ്ങളുടെ ഭക്ഷണം','05 / നിങ്ങളുടെ സമയം','06 / ചലനവും വിശ്രമവും','07 / അനുയോജ്യമായ സഹായം','08 / ഇഷ്ടമെങ്കിൽ മാത്രം'][step])+'</span><h2 id="question-heading" tabindex="-1">'+L(title,ml)+'</h2><p class="question-intro">'+L(intro,introMl)+'</p>';}
  function group(key,en,ml,two){return '<div class="question-group"><p class="mini-question">'+L(en,ml)+'</p>'+choices(key,false,two)+'</div>';}
  function field(key,en,ml,min,max,placeholder){return '<label>'+L(en,ml)+'<input data-field="'+key+'" id="field-'+key+'" type="number" inputmode="decimal" min="'+min+'" max="'+max+'" step="'+(key==='age'?'1':'.1')+'" value="'+esc(answers[key])+'" placeholder="'+placeholder+'"></label>';}
  function canContinue(){
@@ -61,10 +61,33 @@
   }
   return '';
  }
+ function acknowledgement(){
+  var messages=[
+   [answers.area==='outside'?'Thanks for telling us. The first delivery pilot is Kozhikode; you can still explore your routine.':'Good to meet you. Let’s make this fit the place you spend your day.',answers.area==='outside'?'പറഞ്ഞതിന് നന്ദി. ആദ്യ ഡെലിവറി പൈലറ്റ് കോഴിക്കോട്ടാണ്. നിങ്ങളുടെ ശീലം പരിശോധിക്കാം.':'നിങ്ങളുടെ ദിവസത്തിന് ചേരുന്ന രീതിയിൽ തുടങ്ങാം.'],
+   [answers.goal==='health'?'Understood. A professional review will come before individual nutrition targets.':'Got it. We’ll keep that goal in mind as we look at your day.',answers.goal==='health'?'മനസ്സിലായി. വ്യക്തിഗത പോഷക ലക്ഷ്യങ്ങൾക്ക് മുമ്പ് വിദഗ്ധന്റെ വിലയിരുത്തൽ വേണം.':'മനസ്സിലായി. നിങ്ങളുടെ ലക്ഷ്യം മനസ്സിൽ വെച്ച് മുന്നോട്ട് പോകാം.'],
+   ['That’s a useful place to start. One manageable change is enough for now.','അവിടെ നിന്ന് തുടങ്ങാം. ഇപ്പോൾ ചെയ്യാവുന്ന ഒരു ചെറിയ മാറ്റം മതി.'],
+   [answers.allergies==='review'?'Thanks for flagging that. Meal suggestions will wait for an ingredient review.':'Familiar flavours stay in the picture. We’ll match meal ideas to your preference.',answers.allergies==='review'?'അറിയിച്ചതിന് നന്ദി. ചേരുവകൾ പരിശോധിച്ച ശേഷമേ മീൽ നിർദേശം നൽകൂ.':'പരിചിത രുചികൾ കൈവിടേണ്ട. നിങ്ങളുടെ ഇഷ്ടത്തിന് ചേരുന്ന മീൽ ആശയങ്ങൾ കാണാം.'],
+   ['A plan should make space for your day. This is a preference, not a delivery booking.','നിങ്ങളുടെ ദിവസത്തിന് ചേരുന്നതാകണം പ്ലാൻ. ഇത് ഇഷ്ടം അറിയിക്കലാണ്; ഡെലിവറി ബുക്കിങ് അല്ല.'],
+   ['Thanks. Food, movement and rest all give us context for your routine.','നന്ദി. ഭക്ഷണം, ചലനം, വിശ്രമം എന്നിവ നിങ്ങളുടെ ശീലം മനസ്സിലാക്കാൻ സഹായിക്കുന്നു.'],
+   ['You can see your routine snapshot whichever support route you choose.','ഏത് സഹായം തിരഞ്ഞെടുത്താലും നിങ്ങളുടെ ശീലങ്ങളുടെ സംഗ്രഹം കാണാം.'],
+   ['Your choice. The snapshot is useful with or without a body estimate.','നിങ്ങളുടെ ഇഷ്ടം. ശരീര കണക്കില്ലാതെയും സംഗ്രഹം കാണാം.']
+  ];
+  var chosen=[answers.area,answers.goal,answers.challenge,answers.diet,answers.meal,answers.activity,answers.review,answers.equation!=='skip'][step];
+  if(!chosen)return '';
+  return '<div class="coach-response" role="status"><span class="exp-roza-avatar" aria-hidden="true">r.</span><p>'+L(messages[step][0],messages[step][1])+'</p></div>';
+ }
+ function renderCompanion(){
+  var title=document.getElementById('companion-title'),caption=document.getElementById('companion-caption'),phase=document.getElementById('companion-phase');
+  if(!title)return;
+  var phases=[['Your day, first.','ആദ്യം നിങ്ങളുടെ ദിവസം.','A few choices. A more useful starting point.','ചില തിരഞ്ഞെടുപ്പുകൾ. നിങ്ങൾക്കൊത്ത ഒരു തുടക്കം.'],['Food that feels like you.','നിങ്ങൾക്കിഷ്ടമുള്ള ഭക്ഷണം.','Keep your favourites in the conversation.','ഇഷ്ടഭക്ഷണങ്ങളും പരിഗണിക്കാം.'],['Find your rhythm.','നിങ്ങൾക്കൊത്ത ശീലം.','The whole day matters, not just one meal.','ഒരു മീൽ മാത്രമല്ല; മുഴുവൻ ദിവസവും പ്രധാനമാണ്.'],['A place to begin.','ഒരു നല്ല തുടക്കം.','Your snapshot, your pace.','നിങ്ങളുടെ സംഗ്രഹം. നിങ്ങളുടെ വേഗത്തിൽ.']];
+  var i=step<3?0:step<5?1:step<8?2:3,v=phases[i];title.textContent=L(v[0],v[1]);caption.textContent=L(v[2],v[3]);phase.textContent=L('YOUR ROUTINE / ','നിങ്ങളുടെ ശീലം / ')+String(Math.min(step+1,8)).padStart(2,'0');
+  document.querySelectorAll('[data-coach-phase]').forEach(function(el,n){el.classList.toggle('active',n===i);});
+ }
  function render(focus){
+  renderCompanion();
   if(step===8){renderResults(focus);return;}
   document.body.classList.remove('result-page');
-  box.innerHTML='<div class="quiz-progress-top"><span>'+L('YOUR ROUTINE, UNDERSTOOD','നിങ്ങളുടെ ശീലം മനസ്സിലാക്കാം')+'</span><span>'+L('Step ','ഘട്ടം ')+(step+1)+' / 8</span></div><div class="quiz-progress-track" aria-label="'+L('Assessment progress','പുരോഗതി')+'">'+Array.from({length:8},function(_,i){return '<span class="'+(i<step?'done':i===step?'current':'')+'"></span>';}).join('')+'</div>'+content()+'<p id="quiz-error" class="field-error" role="alert"></p><div class="quiz-nav"><button type="button" class="quiz-back" data-back>'+L(step?'← Back':'← Home',step?'← പിന്നോട്ട്':'← ഹോം')+'</button><button type="button" class="btn" data-next '+(canContinue()?'':'disabled')+'>'+L(step===7?'See my snapshot':'Continue',step===7?'എന്റെ സംഗ്രഹം കാണാം':'തുടരാം')+' ↗</button></div><p class="quiz-helper">'+L('Nothing is sent. You can change any answer before sharing.','ഒന്നും അയയ്ക്കുന്നില്ല. പങ്കിടുന്നതിന് മുമ്പ് ഏത് മറുപടിയും മാറ്റാം.')+'</p>';
+  box.innerHTML='<div class="quiz-progress-top"><span>'+L('YOUR ROUTINE, UNDERSTOOD','നിങ്ങളുടെ ശീലം മനസ്സിലാക്കാം')+'</span><span>'+L('Step ','ഘട്ടം ')+(step+1)+' / 8</span></div><div class="quiz-progress-track" aria-label="'+L('Assessment progress','പുരോഗതി')+'">'+Array.from({length:8},function(_,i){return '<span class="'+(i<step?'done':i===step?'current':'')+'"></span>';}).join('')+'</div>'+content()+acknowledgement()+'<p id="quiz-error" class="field-error" role="alert"></p><div class="quiz-nav"><button type="button" class="quiz-back" data-back>'+L(step?'← Back':'← Home',step?'← പിന്നോട്ട്':'← ഹോം')+'</button><button type="button" class="btn" data-next '+(canContinue()?'':'disabled')+'>'+L(step===7?'See my snapshot':'Continue',step===7?'എന്റെ സംഗ്രഹം കാണാം':'തുടരാം')+' ↗</button></div><p class="quiz-helper">'+L('Nothing is sent. You can change any answer before sharing.','ഒന്നും അയയ്ക്കുന്നില്ല. പങ്കിടുന്നതിന് മുമ്പ് ഏത് മറുപടിയും മാറ്റാം.')+'</p>';
   if(focus){document.getElementById('question-heading').focus({preventScroll:true});box.scrollIntoView({behavior:document.documentElement.classList.contains('motion-off')?'auto':'smooth',block:'start'});}
  }
  function firstHabit(){

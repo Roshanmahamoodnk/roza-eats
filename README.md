@@ -6,13 +6,15 @@ An English–Malayalam experience for familiar Kerala meals, thoughtful portions
 
 ## Experience
 
-- `index.html`: local daily-life storytelling, the understand → plan → schedule → review service, meal discovery, interactive portions, walking time/distance and Roza Labs.
-- `routine.html`: eight conversational steps with explanations, optional body measurements, preference-based meal ideas, a practical first habit and a downloadable summary.
+- `index.html`: interactive daily-life prompts, swipeable/filterable six-meal discovery, a scroll-linked routine story, live portion estimates and Roza Labs.
+- `routine.html`: eight conversational steps with answer-specific acknowledgements, an evolving visual companion, expandable explanations, optional body measurements, preference-based meal ideas and a downloadable summary.
 - `menu.html`: six Kerala meal ideas, dietary filters, customizable bowls, ingredient-based reference estimates, lunch bag and proposed next-day schedule.
 - `my-week.html`: one habit, seven dated check-ins, an optional device-only save, bilingual download and print layout. Assessment handoff carries only a habit and meal preference.
 - `evidence.html`: primary sources, calculation assumptions, privacy, imagery disclosures and launch status.
 
-The responsive design preserves the existing Nano Banana 2.1 assets and adds a forest-green/ivory/lime identity, scroll reveals, sticky navigation, English/Malayalam switching and reduced-motion controls. AI images are labelled concepts, not customers, staff or verified serving photographs.
+`experience.css` and `experience.js` provide the shared app-style navigation, contextual help dialog, meal discovery and visual layer across all five routes. Help is a clearly labelled guide, not a simulated live nutritionist. It never submits information or claims a callback is booked.
+
+The responsive design preserves the existing Nano Banana 2.1 assets and adds a forest-green/ivory/lime identity with a warm orange accent, scroll reveals, sticky navigation and a persistent navigation dock, English/Malayalam switching and reduced-motion controls. AI images are labelled concepts, not customers, staff or verified serving photographs.
 
 ## Run and validate
 
@@ -48,3 +50,9 @@ Assessment answers exist only in current-page memory and disappear on reload or 
 This is a prelaunch experience and planning prototype. The proposed pilot is Kozhikode lunch, Monday–Saturday, at least 24 hours ahead in India Standard Time. It does not reserve capacity, charge customers or activate subscriptions. Pricing, service zones, staff credentials, support contacts, terms and fulfillment must be finalized before commerce. See `DESIGN-AND-LAUNCH.md`.
 
 Brand names and artwork remain with their respective owners; no open-source licence has been granted by this repository.
+
+## Experience upgrade · 6 November 2026
+
+The latest redesign makes the first action personal: choose a daily difficulty, receive a short relevant reply, then carry that choice into the assessment. Homepage meals can be filtered or swiped; each opens its existing recipe in the meal studio. The narrative's day widget follows the three service steps while scrolling. The shared “Ask Roza” dialog explains delivery, professional support and contact status without inventing live availability.
+
+Verification for this upgrade: all 25 existing tests passed; all changed scripts parsed; local assets and HTML anchor targets checked. Browser checks covered desktop and narrow English/Malayalam layouts, 360/390 px phone frames, meal filters and builder portion/protein changes, challenge handoff, ordinary results, health/ingredient review routes, weekly habit handoff, dialog close/Escape/focus return, motion preference and root scroll behaviour. Existing Nano Banana files, calculations, scheduling rules and blank contact destinations were preserved.
