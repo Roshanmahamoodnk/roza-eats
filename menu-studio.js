@@ -1,0 +1,5 @@
+(function(){'use strict';var filter='all',R=window.RozaRoutine,S=window.RozaSite;function render(){document.getElementById('catalog-grid').innerHTML=R.meals.filter(function(m){return filter==='all'||m.category===filter;}).map(function(m){return S.foodCard(m.id);}).join('');}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-catalog]');if(b){filter=b.dataset.catalog;document.querySelectorAll('[data-catalog]').forEach(function(x){x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b));});render();}var a=e.target.closest('a[href*="menu.html?meal="]');if(a){var id=new URL(a.href).searchParams.get('meal');if(R.presets[id]){e.preventDefault();window.RozaBuilder.chooseMeal(id);}}});
+document.addEventListener('roza:language',render);window.addEventListener('roza:toast',function(e){var t=document.getElementById('toast');t.textContent=e.detail;t.classList.add('visible');setTimeout(function(){t.classList.remove('visible');},3500);});
+render();var preset=new URLSearchParams(location.search).get('meal');if(R.presets[preset])window.RozaBuilder.chooseMeal(preset);
+})();
