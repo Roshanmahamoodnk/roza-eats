@@ -24,7 +24,7 @@ node --test nutrition.test.cjs routine.test.cjs
 
 Open http://localhost:8000. GitHub Pages serves `main` from `/ (root)`.
 
-The 19 automated checks cover ingredient calculations, component scaling, valid preferences, bag validation, exact 24-hour IST cutoffs, Sunday exclusions, repeat schedules, maintenance-estimate guards, dietary recommendations, walking arithmetic and contact configuration. Browser QA covers desktop and narrow layouts, Malayalam, normal and review-first assessment paths, portion controls, meal customization, schedule review and reset. Snapshot generation is triggered in-browser; the remote browser download event could not be captured for file verification.
+The 19 automated checks cover ingredient calculations, component scaling, valid preferences, bag validation, exact 24-hour IST cutoffs, Sunday exclusions, repeat schedules, maintenance-estimate guards, dietary recommendations, walking arithmetic and contact configuration. Browser QA covers desktop and narrow layouts, Malayalam, normal and review-first assessment paths, portion controls, meal customization, schedule review and reset. Snapshot download and file content are verified in a standalone browser tab.
 
 ## Contact activation
 
