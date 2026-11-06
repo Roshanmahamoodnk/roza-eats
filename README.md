@@ -4,6 +4,8 @@ An English–Malayalam experience for familiar Kerala meals, thoughtful portions
 
 **Public website:** https://roshanmahamoodnk.github.io/roza-eats/
 
+**Latest design review:** [Whole-journey audit, award evidence and verification](DESIGN-AUDIT-2026-11-07.md). The shared `roza-ui.css` / `roza-ui.js` layer carries the established identity through discovery, questions, results, ingredients, practice, scheduling, evidence and help. Published facts and our design analysis are separated.
+
 ## Experience
 
 - `index.html`: interactive daily-life prompts, swipeable/filterable six-meal discovery, a scroll-linked routine story, live portion estimates and Roza Labs.

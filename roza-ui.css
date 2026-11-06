@@ -1,0 +1,140 @@
+/* Shared journey language. Food first; controls remain ordinary native controls. */
+:root{--ui-sage:#e9eedb;--ui-peach:#f6dfc9;--ui-lilac:#ece8f0;--ui-ink:#173e2d;--ui-note:#4e6252;--ui-radius:24px;--ui-ease:cubic-bezier(.2,.7,.25,1)}
+.btn,.button{font-size:14px;min-height:48px;line-height:1.5}
+.quiet-link{min-height:44px;display:inline-flex;align-items:center;font-size:13px}
+.nav-shell nav,.footer-links{font-size:13px}.language-control{font-size:13px;min-height:44px}
+.eyebrow,.exp-kicker,.question-label{font-size:11px;letter-spacing:.1em;line-height:1.8}
+.small-note,.quiz-helper,.coach-disclosure,.exp-food-disclosure,.exp-how-footnote,.week-disclaimer{font-size:12px;line-height:1.8}
+.image-credit,.exp-labs figcaption,.exp-portion-photo>small,.exp-hero-visual>figcaption{font-size:10px}
+:is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #a94c27;outline-offset:4px}
+:is(.builder-section,.week-focus) :is(a,button):focus-visible{outline-color:#f3b988}
+.exp-dock a,.exp-dock button{font-size:11px}.exp-dock span{font-size:inherit}
+.exp-hero-lead,.exp-portion-copy>p:not(.exp-kicker),.exp-story-step>p:not(.exp-kicker),.exp-labs-grid>div>p:not(.exp-kicker){font-size:16px;line-height:1.8}
+.exp-hero .small-note,.exp-lunch-ticket small,.exp-hero-note,.exp-finale .shell>p:not(.exp-kicker){font-size:12px;line-height:1.7}
+.exp-meal-info>p{font-size:14px;line-height:1.7}.exp-meal-info>small{font-size:11px}.exp-meal-image>span{font-size:11px}
+.exp-truth-rows a{font-size:16px;line-height:1.65}.exp-how details,.exp-labs details{font-size:14px}
+.exp-help-sheet{width:430px;padding:28px}.exp-help-top h2{font-size:22px}.exp-help-top small{font-size:12px}.exp-help-top>button{width:44px;min-height:44px;font-size:24px}
+.exp-help-content>p{font-size:15px;line-height:1.75}.exp-help-notice{font-size:13px;line-height:1.75;padding:16px;border-left:3px solid #67834f}
+.exp-help-options button{font-size:14px;min-height:64px;padding:16px 12px}.exp-help-more{font-size:12px;min-height:44px;display:inline-flex;align-items:center}
+.journey-route{padding-top:22px;padding-bottom:22px}.journey-route>span{font-size:10px}.journey-route li,.journey-route li a{font-size:12px}
+/* Menu: a photographed invitation, followed by one clear choice. */
+.menu-entry{display:grid;grid-template-columns:1.15fr .85fr;gap:68px;align-items:center;padding-top:36px;padding-bottom:52px}
+.menu-entry h1{font-size:clamp(42px,4.7vw,64px);line-height:1.08}.menu-entry .eyebrow{margin:22px 0 18px}
+.menu-entry>div>p:not(.eyebrow){font-size:16px;line-height:1.8;max-width:570px;margin-top:23px;color:var(--muted)}
+.menu-entry .menu-status{gap:7px;margin-top:22px}.menu-status .chip{font-size:11px;line-height:1.6}
+.menu-entry-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:27px}
+.menu-editorial-photo{margin:0;position:relative;border-radius:120px 24px 24px 24px;height:435px;background:#e3dfce;overflow:hidden}
+.menu-editorial-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.menu-editorial-photo figcaption{position:absolute;bottom:18px;left:18px;right:18px;background:#fffdf5f2;padding:18px 20px;border-radius:16px;display:grid;gap:5px}
+.menu-editorial-photo b{font-size:22px;letter-spacing:-.04em;line-height:1.25}.menu-editorial-photo span{font-size:13px}.menu-editorial-photo small{font-size:10px;color:var(--ui-note)}
+.catalog-heading{display:flex;justify-content:space-between;gap:35px;align-items:end;padding:30px 0;border-top:1px solid var(--line)}
+.catalog-heading h2{font-size:37px}.catalog-heading .eyebrow{margin-bottom:12px}.catalog-heading>p{max-width:310px;font-size:14px;color:var(--ui-note);line-height:1.8}
+.catalog-tabs button{font-size:14px;min-height:46px}.catalog-status{font-size:12px;color:var(--ui-note);margin:-12px 0 23px}
+.menu-studio-page .food-grid{gap:34px 24px}.menu-studio-page .food-card{border-radius:22px;overflow:hidden;background:#fffcf4}
+.menu-studio-page .food-body{padding:22px}.menu-studio-page .food-body h3{font-size:28px;line-height:1.22;min-height:68px}
+.food-body>small{font-size:11px;line-height:1.7}.food-body>p{font-size:14px;line-height:1.8}.food-body .quiet-link{font-size:14px}
+.macro-estimate{font-size:10px!important;line-height:1.8!important}.food-macros>b span{font-size:12px}
+.food-body .quiet-link{width:100%;justify-content:space-between;border-top:1px solid var(--line);border-bottom:0;margin-top:20px;padding-top:14px}
+.studio-catalog>.small-note{font-size:12px}.menu-studio-page .food-badge{font-size:11px}
+/* Builder: one ingredient decision at a time, visible summary, optional workings. */
+.menu-studio-page .builder-section{border-radius:32px;margin:18px 24px 0;padding:50px 0}
+.menu-studio-page .builder-heading h2{font-size:48px;line-height:1.1}.builder-heading>p{font-size:15px;line-height:1.8}
+.builder-intro-image{height:112px;position:relative;overflow:hidden;border-radius:16px;margin-bottom:18px}.builder-intro-image img{width:100%;height:100%;object-fit:cover;object-position:50% 48%}
+.builder-intro-image>span{font-size:12px;line-height:1.6;max-width:80%;background:#173e2de8;padding:8px 12px;border-radius:9px}
+.builder-jumps a{font-size:13px;min-height:48px}.builder-jumps a span{font-size:11px}
+.builder-panel-head h3{font-size:23px;line-height:1.3}.builder-panel-head p{font-size:13px;line-height:1.7}.step-pill{font-size:12px}
+.component-option strong{font-size:15px;line-height:1.6}.component-option small{font-size:12px;line-height:1.7}.component-option{min-height:85px}
+.choice-pills button,.mini-pills button{min-height:44px;font-size:13px}.level-card strong{font-size:14px;line-height:1.5}.level-card small{font-size:12px;line-height:1.7}
+.portion-adjust>span,.spice-control>span{font-size:13px}.is-selected{box-shadow:inset 0 0 0 1px currentColor}
+.menu-studio-page .bowl-summary{position:sticky;top:108px;max-height:none;overflow:visible;border-radius:23px;display:block}
+.bowl-summary .summary-topline{border-radius:23px 23px 0 0}.summary-topline small,.summary-topline>span{font-size:11px}
+.bowl-summary .summary-food{height:130px;min-height:0;overflow:hidden}.summary-food>span{font-size:10px}
+.summary-content{padding:22px}.summary-content h3{font-size:25px;line-height:1.2}.summary-subtitle{font-size:13px;line-height:1.7}
+.estimate-label{font-size:10px;line-height:1.8}.estimate-note,.summary-preview,.builder-allergens,.oil-note small{font-size:12px;line-height:1.7}
+.pairing-insight p,.pairing-tip,.oil-note{font-size:13px;line-height:1.75}.model-link{font-size:13px;min-height:44px}
+.portion-detail{margin-top:20px;border-top:1px solid #cbd5c0;border-bottom:1px solid #cbd5c0}.portion-detail summary{font-size:13px;font-weight:750;cursor:pointer;min-height:48px;padding:12px 0}
+.portion-detail .bowl-portions{font-size:13px}.bowl-summary .summary-add{font-size:14px;min-height:50px}
+.plan-intro>p,.studio-support p:not(.eyebrow){font-size:15px;line-height:1.8}.plan-steps{font-size:13px}.delivery-card{border-radius:24px}
+.delivery-card label,.delivery-card legend,.delivery-area{font-size:13px}.delivery-card input,.delivery-card select{font-size:16px;min-height:48px}
+.field-hint,.order-status-note,.order-cutoff,.bag-saved,.bag-item-info p,.bag-item-info small{font-size:12px;line-height:1.8}
+.order-slots button{font-size:16px;min-height:60px}.order-slots small{font-size:11px}.bag-item-actions button,.quantity-control button{font-size:13px;min-height:44px;min-width:44px}
+.order-dialog{border-radius:26px}.order-dialog p,.order-dialog li{font-size:14px;line-height:1.8}.order-dialog .dialog-close{min-height:44px;min-width:44px}.order-dialog h2{font-size:38px}
+/* Coach: quiet surroundings, generous choices, and one next action. */
+.assessment-wrap{gap:55px}.coach-shell{padding:34px;border-radius:28px;box-shadow:0 18px 50px #173e2d06}
+.quiz-progress-top{font-size:11px;gap:20px}.quiz-progress-track{margin-bottom:26px;gap:7px}.quiz-progress-track span{height:5px}
+.question-intro{font-size:15px;line-height:1.8}.coach-shell h2{font-size:34px;line-height:1.2}
+.quiz-choice,.choice-list.two-col .quiz-choice{min-height:64px;padding:16px;gap:12px;border-radius:15px}
+.quiz-choice strong,.choice-list.two-col .quiz-choice strong,.question-group .quiz-choice strong{font-size:14px;line-height:1.6}
+.quiz-choice small{font-size:12px;line-height:1.7}.choice-mark{flex-shrink:0}.quiz-choice.selected{background:var(--ui-sage);border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
+.mini-question{font-size:14px;margin-top:27px;margin-bottom:13px}.question-group{padding-top:7px}
+.why-ask{font-size:13px;line-height:1.8}.why-ask summary{min-height:44px;display:list-item;align-content:center}.inline-info{font-size:14px;line-height:1.85;padding:19px;border-radius:15px}
+.inline-check{font-size:14px;line-height:1.75}.inline-check input{width:20px;height:20px;flex-shrink:0}.coach-response p{font-size:13px;line-height:1.8}
+.quiz-nav .btn{font-size:14px;min-height:48px}.quiz-back{font-size:13px;min-height:44px}.field-row label{font-size:13px}.field-row input,.coach-shell select{font-size:16px}
+.exp-companion>p:not(.exp-kicker){font-size:15px}.exp-companion-foot{font-size:12px}.exp-companion-steps{font-size:12px}
+.ui-enter .question-label,.ui-enter #question-heading,.ui-enter .question-intro{animation:ui-arrive .24s var(--ui-ease) both}
+/* Results: personal habit carries the visual weight, with the scope beside it. */
+.result-page .coach-shell{background:transparent;border:0;box-shadow:none;padding:12px 0 35px}.result-header{padding:10px 0 25px;margin-bottom:18px}.result-header h2{font-size:48px}
+.result-chips span{font-size:12px;padding:8px 13px}.snapshot-nav{display:flex;gap:12px;flex-wrap:wrap;padding:22px 0 0}
+.snapshot-nav a{font-size:13px;min-height:44px;padding:10px 16px;background:#fffdf5;border:1px solid #cbd4bf;border-radius:50px;font-weight:700}
+.result-two{grid-template-columns:1.3fr 1fr;gap:23px}.habit-card{background:var(--green);color:#fffdf5;padding:32px;border-radius:25px}.habit-card .question-label{color:#d9ef94}.habit-card h3{font-size:35px;line-height:1.14}.habit-card p,.habit-card li{font-size:15px;line-height:1.8;color:#ecf0e3}.habit-card ol{padding-left:20px}
+.energy-card{background:#fdfbf3;border-radius:25px;padding:30px;border-color:#cad3bd}.energy-card p{font-size:14px;line-height:1.8}.energy-card small{font-size:11px;line-height:1.7}.energy-card a{font-size:13px;min-height:44px;display:inline-flex;align-items:center}.energy-card>strong{font-size:33px;line-height:1.2}
+.practice-invite{background:var(--ui-peach);border:1px solid #e2c5a9;padding:28px;border-radius:25px}.practice-invite h3{font-size:30px}.practice-invite p{font-size:15px;line-height:1.8}.practice-invite small{font-size:12px;line-height:1.8}.practice-actions button{min-height:44px;font-size:13px}
+.result-section{margin-top:48px}.result-section>p,.result-movement p,.review-contact>p{font-size:14px;line-height:1.8}.result-meals .food-body{padding:20px}.result-meals .food-body>p{font-size:13px}.result-meals .food-body .quiet-link{font-size:13px}.review-contact{border-radius:24px;padding:28px;background:#fffdf5}
+.result-two,.result-section,.practice-invite{scroll-margin-top:115px}
+/* Week: the next repeatable action leads; entries are not a health score. */
+.week-main{padding-top:35px}.week-intro{gap:65px;margin-bottom:30px}.week-intro h1{font-size:clamp(38px,4.5vw,58px)}.week-intro>div>p:last-child{font-size:16px;line-height:1.8;margin-top:20px}
+.week-note{background:var(--ui-peach);border-color:#dfc4a8;transform:rotate(1deg);padding:22px}.week-note p{font-size:22px}.week-note small{font-size:12px;line-height:1.7;margin-top:14px}
+.week-focus{border-radius:25px;grid-template-columns:1fr 210px;gap:32px;margin-top:20px;padding:30px}.week-focus h2{font-size:36px;line-height:1.2}.week-focus p{font-size:15px;line-height:1.8}.week-focus .eyebrow{font-size:11px}.week-focus .week-meta{font-size:14px;color:#ecf5d1}
+.week-focus-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:15px}.week-focus-links a{font-size:13px;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid #afc28d}
+.week-count{padding-left:25px}.week-count strong{font-size:40px;letter-spacing:-.045em}.week-count>span,.week-count p{font-size:12px;line-height:1.8}
+.week-setup{margin-top:24px;scroll-margin-top:112px}.week-fields label{font-size:13px}.week-fields input,.week-fields select{font-size:15px;min-height:49px}
+.week-setup-bottom p,.week-track-title p{font-size:13px;line-height:1.8}.week-setup-bottom .btn{font-size:14px}.week-track-title{scroll-margin-top:120px}
+.week-grid{gap:9px}.week-day{border-radius:18px;padding:16px 11px}.week-day time{font-size:12px}.day-status{font-size:11px;line-height:1.6}.week-day button{font-size:12px;min-height:44px}.week-day .future-note{font-size:12px;line-height:1.8}.week-day.is-today{background:#f9eddd}
+.week-reflect{font-size:14px;line-height:1.8}.week-save{background:var(--ui-sage)}.week-save label{font-size:15px}.week-save p{font-size:13px;line-height:1.8}.week-tools .quiet-link{font-size:13px}.week-next p:not(.eyebrow){font-size:15px;line-height:1.8}
+/* Evidence: three clearly different kinds of information, not a wall of claims. */
+.evidence-page .subpage-head{padding-top:44px;padding-bottom:30px}.evidence-page .subpage-head h1{font-size:60px}.evidence-status{font-size:13px;line-height:1.8;background:var(--ui-lilac)}
+.evidence-key{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:10px;padding-bottom:28px}
+.evidence-key>a{position:relative;padding:25px 45px 25px 24px;border-radius:20px;background:var(--ui-sage);border:1px solid #d2d9c7}.evidence-key>a:nth-child(2){background:var(--ui-lilac);border-color:#d9d1df}.evidence-key>a:nth-child(3){background:var(--ui-peach);border-color:#e5cdb6}
+.evidence-key span{font-size:12px}.evidence-key h2{font-size:24px;line-height:1.2;letter-spacing:-.04em;margin:15px 0 10px}.evidence-key p{font-size:13px;line-height:1.8}.evidence-key b{position:absolute;right:20px;top:22px;font-size:24px;font-weight:500}
+.evidence-layout{grid-template-columns:220px minmax(0,1fr);gap:60px}.evidence-nav{font-size:13px;gap:8px}.evidence-nav a{padding:12px 10px;border-bottom:0;border-left:2px solid #d4dbc9;min-height:44px}.evidence-nav a[aria-current]{border-left:3px solid var(--green);background:var(--ui-sage);border-radius:0 10px 10px 0}
+.evidence-content section{padding:42px 0}.evidence-content h2{font-size:34px;line-height:1.2}.evidence-content p,.evidence-content li{font-size:16px;line-height:1.9}.evidence-content .method-box{padding:24px;background:#eeede5}.evidence-content .method-box code{font-size:13px;overflow-wrap:anywhere}
+.evidence-next{display:flex;justify-content:space-between;align-items:center;gap:40px;padding-top:40px;padding-bottom:65px;border-top:1px solid var(--line)}.evidence-next h2{font-size:44px}.evidence-next>div:last-child{display:grid;gap:12px}.evidence-next .quiet-link{justify-content:center}
+@keyframes ui-arrive{from{opacity:.55;transform:translateY(9px)}to{opacity:1;transform:none}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){html:not(.motion-off) .food-photo-new,html:not(.motion-off) .menu-editorial-photo img{transition:transform .45s var(--ui-ease)}html:not(.motion-off) .food-card>a:hover .food-photo-new{transform:scale(1.025)}html:not(.motion-off) .quiz-choice{transition:background .18s,border-color .18s}html:not(.motion-off) .evidence-key>a:hover{transform:translateY(-3px)}.evidence-key>a{transition:transform .2s}}
+@media(max-width:1000px){.menu-entry{gap:35px;grid-template-columns:1fr .8fr}.menu-editorial-photo{height:370px}.builder-layout{grid-template-columns:1fr}.menu-studio-page .bowl-summary{position:static;max-height:none}.evidence-layout{gap:30px;grid-template-columns:185px minmax(0,1fr)}.evidence-key h2{font-size:22px}.week-focus{grid-template-columns:1fr 190px}.nav-shell nav{gap:18px}.assessment-wrap{gap:30px}}
+@media(max-width:600px){
+ .btn,.button,.quiz-nav .btn{font-size:14px;min-height:48px}.language-control{font-size:12px}.nav-shell{padding-left:20px;padding-right:20px}.footer-links{font-size:12px;gap:15px}.footer-links button{min-height:44px}
+ .eyebrow,.exp-kicker,.question-label,.exp-location{font-size:10px}.small-note,.quiz-helper,.coach-disclosure,.exp-food-disclosure,.exp-how-footnote,.week-disclaimer{font-size:11px}
+ .exp-dock a,.exp-dock button,html[lang=ml] .exp-dock span{font-size:10px;line-height:1.5}.exp-dock{max-width:420px}.exp-dock svg{height:18px;width:18px}
+ .exp-hero-lead,html[lang=ml] .exp-hero-lead{font-size:15px;line-height:1.8;max-width:330px}.exp-hero .small-note,.exp-finale .shell>p:not(.exp-kicker){font-size:12px}.exp-lunch-ticket small{font-size:10px}.exp-meal-info>p{font-size:14px}.exp-meal-info>small{font-size:11px}.exp-meal-image>span{font-size:10px}
+ .exp-story-step>p:not(.exp-kicker),.exp-portion-copy>p:not(.exp-kicker),.exp-labs-grid>div>p:not(.exp-kicker){font-size:15px}.exp-story-chat,.exp-how .quiet-link,.exp-portion .quiet-link{font-size:13px}.exp-truth-rows a{font-size:14px}.exp-labs details{font-size:14px}.exp-labs figcaption{font-size:10px}
+ .exp-help-sheet{inset:auto 10px calc(88px + env(safe-area-inset-bottom)) 10px;width:auto;padding:22px;max-height:calc(100dvh - 110px)}.exp-help-top h2{font-size:19px}.exp-help-top small{font-size:11px}.exp-help-content h3{font-size:28px}.exp-help-content>p{font-size:14px}.exp-help-options button{font-size:14px}.exp-help-notice{font-size:12px}.exp-help-more{font-size:12px}
+ .journey-route{padding-top:17px;padding-bottom:17px}.journey-route li,.journey-route li a{font-size:11px}.journey-route>span{font-size:9px}
+ .menu-entry{display:flex;flex-direction:column;gap:28px;padding-top:26px;padding-bottom:30px}.menu-entry h1{font-size:43px}.menu-entry>div>p:not(.eyebrow){font-size:15px;margin-top:20px}.menu-entry .eyebrow{font-size:10px;margin-top:18px}.menu-status .chip{font-size:10px;padding:7px 10px}.menu-entry-actions{margin-top:22px;gap:12px}
+ .menu-entry{gap:0}.menu-entry>div{display:contents}.menu-entry .back-link{order:0;align-self:start}.menu-entry .eyebrow{order:1;align-self:start}.menu-entry h1{order:2;align-self:start}.menu-entry>div>p:not(.eyebrow){order:4}.menu-entry .menu-status{order:5;align-self:start}.menu-entry-actions{order:6;align-self:start}
+ .menu-editorial-photo{order:3;width:100%;height:240px;margin-top:25px;border-radius:65px 20px 20px 20px}.menu-editorial-photo figcaption{padding:7px 9px;bottom:10px;left:auto;right:10px;max-width:92%}.menu-editorial-photo b,.menu-editorial-photo span{display:none}
+ .menu-studio-page .bag-float{min-height:44px;padding:10px 15px;font-size:12px;gap:10px}.menu-studio-page .bag-float svg{width:19px;height:19px}
+ .catalog-heading{display:block;padding:25px 0}.catalog-heading h2{font-size:30px}.catalog-heading>p{font-size:14px;margin-top:15px}.menu-studio-page .catalog-tabs button{font-size:13px;min-height:46px}.catalog-status{font-size:11px;margin-top:-10px}
+ .menu-studio-page .food-grid{gap:28px}.menu-studio-page .food-body{padding:20px}.menu-studio-page .food-body h3{min-height:0;font-size:27px}.food-body>p{font-size:14px}.macro-estimate{font-size:10px!important}.studio-catalog>.small-note{font-size:11px}
+ .menu-studio-page .builder-section{margin:0 8px;border-radius:22px;padding:28px 0}.builder-section .section-shell{padding-left:16px;padding-right:16px}.menu-studio-page .builder-heading h2{font-size:35px}.builder-heading>p{font-size:14px}.builder-jumps{gap:6px}.builder-jumps a{font-size:12px;padding:9px 12px;gap:7px}.builder-jumps a span{font-size:10px}
+ .builder-intro-image{height:100px}.builder-intro-image>span{font-size:11px}.builder-panel-head h3{font-size:21px}.builder-panel-head p{font-size:12px}.level-card strong{font-size:13px}.level-card small{font-size:11px}.component-option strong{font-size:14px}.component-option small{font-size:12px}.choice-pills button,.mini-pills button{font-size:12px}.portion-adjust>span{font-size:12px}
+ .bowl-summary .summary-food{height:170px}.summary-content{padding:21px}.summary-content h3{font-size:27px}.estimate-note,.summary-preview,.builder-allergens,.oil-note small{font-size:12px}.summary-content .summary-add{font-size:14px}.order-dialog{padding:25px 20px}.order-dialog h2{font-size:31px}.order-dialog p,.order-dialog li{font-size:13px}
+ .assessment-wrap{padding:0 16px;margin-top:22px}.assessment-page .exp-companion h1{font-size:27px}.assessment-page .exp-companion .exp-kicker{font-size:10px}.coach-shell{padding:24px 19px;border-radius:24px}.coach-shell h2{font-size:28px;line-height:1.25}.question-intro{font-size:14px}.quiz-progress-top{font-size:10px;gap:12px}.question-label{font-size:10px}
+ .choice-list[data-choice-group=area],.choice-list[data-choice-group=challenge]{grid-template-columns:1fr}.choice-list[data-choice-group=area] .quiz-choice,.choice-list[data-choice-group=challenge] .quiz-choice,.quiz-choice,.choice-list.two-col .quiz-choice{padding:15px;min-height:62px;gap:12px}
+ .choice-list[data-choice-group=area] .quiz-choice strong,.choice-list[data-choice-group=challenge] .quiz-choice strong,.quiz-choice strong,.choice-list.two-col .quiz-choice strong,.question-group .quiz-choice strong{font-size:14px}.choice-list[data-choice-group=favourites] .quiz-choice strong{font-size:13px}.choice-list[data-choice-group=favourites] .quiz-choice{padding:12px;min-height:60px}.quiz-choice small{font-size:12px}.choice-mark{width:21px;height:21px}
+ .why-ask{font-size:12px;margin:12px 0 18px}.coach-response p{font-size:12px}.quiz-helper{font-size:11px}.inline-info,.inline-check{font-size:13px}.quiz-nav{gap:12px}.quiz-nav .btn{min-width:145px}.mini-question{font-size:14px}.coach-disclosure{font-size:11px}
+ .result-page .coach-shell{padding:6px 4px 30px}.result-header h2{font-size:34px}.result-header .result-mark{width:48px;height:48px;font-size:30px}.result-header{gap:12px}.result-chips span{font-size:11px}.snapshot-nav{gap:7px}.snapshot-nav a{font-size:11px;padding:9px 12px}.result-two{grid-template-columns:1fr;gap:18px}.habit-card,.energy-card{padding:25px 22px}.habit-card h3{font-size:30px}.habit-card p,.habit-card li{font-size:14px}.energy-card>strong{font-size:30px}.energy-card p{font-size:14px}.practice-invite{padding:25px 22px}.practice-invite h3{font-size:28px}.practice-invite p{font-size:14px}.practice-invite small{font-size:11px}.practice-actions .btn{width:100%}.result-section>h3{font-size:27px}.result-section>p,.result-movement p{font-size:14px}.review-contact{padding:25px 22px}.review-contact>p{font-size:14px}
+ .week-main{padding-top:26px}.week-intro{margin-bottom:26px}.week-intro h1{font-size:42px}.week-intro>div>p:last-child{font-size:15px}.week-note{margin-top:22px;padding:20px}.week-note p{font-size:21px}.week-note small{font-size:11px}.week-focus{display:block;padding:25px 22px}.week-focus h2{font-size:31px}.week-focus p{font-size:14px}.week-focus .week-meta{font-size:13px}.week-focus-links{gap:12px}.week-focus-links a{font-size:12px}.week-count{display:grid;grid-template-columns:auto 1fr;gap:3px 13px;padding:18px 0 0;margin-top:20px}.week-count strong{grid-row:1/3;font-size:33px;align-self:center}.week-count>span{font-size:12px}.week-count p{font-size:11px;margin-top:0;line-height:1.7}
+ .week-fields{grid-template-columns:1fr 1fr;gap:18px 12px}.week-fields label{font-size:12px}.week-fields input,.week-fields select{font-size:16px}.week-setup-bottom p,.week-track-title p{font-size:13px}.week-day time{font-size:12px}.day-status{font-size:12px}.week-day button,html[lang=ml] .week-day button{font-size:12px;min-height:48px;padding:9px 6px}.week-day .future-note{font-size:13px}.week-save label{font-size:14px}.week-save p{font-size:12px}.week-tools .btn{font-size:13px}.week-reflect{font-size:13px}
+ .evidence-page .subpage-head{padding-top:28px}.evidence-page .subpage-head h1{font-size:42px}.evidence-page .subpage-head>p:not(.eyebrow){font-size:15px}.evidence-status{font-size:12px;padding:18px}
+ .evidence-key{grid-template-columns:1fr;gap:10px;padding-top:0;padding-bottom:20px}.evidence-key>a{padding:20px 45px 20px 58px;border-radius:17px}.evidence-key span{position:absolute;left:20px;top:22px}.evidence-key h2{font-size:22px;margin:0 0 8px}.evidence-key p{font-size:13px}.evidence-key b{top:18px;right:18px}
+ .evidence-layout{display:block;padding-top:10px}.evidence-nav{display:flex;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin-bottom:18px;padding-bottom:10px;scrollbar-width:thin}.evidence-nav a{flex:0 0 auto;font-size:12px;max-width:220px;border:1px solid #ced7c4;border-radius:30px;padding:10px 15px}.evidence-nav a[aria-current]{border:1px solid var(--green);border-radius:30px}.evidence-content section{padding:30px 0}.evidence-content h2{font-size:29px}.evidence-content p,.evidence-content li{font-size:15px;line-height:1.9}.evidence-content .method-box{padding:19px}.evidence-content .method-box code{font-size:12px}
+ .evidence-next{display:block;padding-top:30px;padding-bottom:40px}.evidence-next h2{font-size:36px}.evidence-next>div:last-child{margin-top:25px;justify-items:start}.evidence-next .quiet-link{justify-content:start}
+ html[lang=ml] .menu-entry h1,html[lang=ml] .week-intro h1,html[lang=ml] .evidence-page .subpage-head h1{font-size:32px;line-height:1.5}html[lang=ml] .coach-shell h2,html[lang=ml] .assessment-page .exp-companion h1{font-size:25px;line-height:1.5}html[lang=ml] .catalog-heading h2,html[lang=ml] .habit-card h3,html[lang=ml] .week-focus h2{font-size:26px;line-height:1.5}html[lang=ml] .evidence-key h2{font-size:21px;line-height:1.5}html[lang=ml] .exp-help-top h2{font-size:18px}
+}
+html[lang=ml] em{font-family:var(--font);font-style:normal;line-height:1.5}html[lang=ml] .menu-editorial-photo b{font-size:19px;line-height:1.6}
+html.motion-off .ui-enter *,html.motion-off .food-photo-new,html.motion-off .menu-editorial-photo img,html.motion-off .evidence-key>a{animation:none!important;transition:none!important;transform:none}
+@media(prefers-reduced-motion:reduce){.ui-enter *,.food-photo-new,.menu-editorial-photo img,.evidence-key>a{animation:none!important;transition:none!important;transform:none}}
+@media print{.snapshot-nav,.menu-entry-actions,.evidence-next,.week-focus-links{display:none!important}.habit-card,.week-focus{background:white;color:#173e2d}.habit-card p,.habit-card li,.habit-card .question-label{color:#173e2d}.result-page .coach-shell{padding:0}.evidence-key{break-inside:avoid}.bowl-summary{position:static!important}.week-count{display:block}}
+
+.exp-micro{font-size:12px;line-height:1.8}
