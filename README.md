@@ -9,6 +9,7 @@ An English–Malayalam experience for familiar Kerala meals, thoughtful portions
 - `index.html`: local daily-life storytelling, the understand → plan → schedule → review service, meal discovery, interactive portions, walking time/distance and Roza Labs.
 - `routine.html`: eight conversational steps with explanations, optional body measurements, preference-based meal ideas, a practical first habit and a downloadable summary.
 - `menu.html`: six Kerala meal ideas, dietary filters, customizable bowls, ingredient-based reference estimates, lunch bag and proposed next-day schedule.
+- `my-week.html`: one habit, seven dated check-ins, an optional device-only save, bilingual download and print layout. Assessment handoff carries only a habit and meal preference.
 - `evidence.html`: primary sources, calculation assumptions, privacy, imagery disclosures and launch status.
 
 The responsive design preserves the existing Nano Banana 2.1 assets and adds a forest-green/ivory/lime identity, scroll reveals, sticky navigation, English/Malayalam switching and reduced-motion controls. AI images are labelled concepts, not customers, staff or verified serving photographs.
@@ -19,12 +20,12 @@ This is a buildless static website. No package installation is required.
 
 ```sh
 python3 -m http.server 8000
-node --test nutrition.test.cjs routine.test.cjs
+node --test nutrition.test.cjs routine.test.cjs week.test.cjs
 ```
 
 Open http://localhost:8000. GitHub Pages serves `main` from `/ (root)`.
 
-The 19 automated checks cover ingredient calculations, component scaling, valid preferences, bag validation, exact 24-hour IST cutoffs, Sunday exclusions, repeat schedules, maintenance-estimate guards, dietary recommendations, walking arithmetic and contact configuration. Browser QA covers desktop and narrow layouts, Malayalam, normal and review-first assessment paths, portion controls, meal customization, schedule review and reset. Snapshot download and file content are verified in a standalone browser tab.
+The 25 automated checks cover ingredient calculations, component scaling, valid preferences, bag validation, exact 24-hour IST cutoffs, Sunday exclusions, repeat schedules, maintenance-estimate guards, dietary recommendations, walking arithmetic and contact configuration, calendar boundaries, future-day check-in restrictions, saved-state validation and private-field exclusion. Browser QA covers desktop and narrow layouts, Malayalam, normal and review-first assessment paths, portion controls, meal customization, schedule review and reset. Snapshot download and file content are verified in a standalone browser tab. Planner QA additionally covers assessment handoff, optional save/reload/removal, date-change confirmation and cancel, future-day controls, and 390/360 px English/Malayalam layouts. The Malayalam planner TXT download was inspected. A print stylesheet and native print control are included; browser-to-PDF output has not been independently verified.
 
 ## Contact activation
 
@@ -42,7 +43,7 @@ Leave both blank until the business destination is supplied. The site then clear
 
 ## Data and launch status
 
-Assessment answers exist only in current-page memory and disappear on reload or clear. No assessment backend or marketing analytics is installed. Language, motion and lunch-bag preferences use local storage. Downloads are generated locally; full snapshots can contain measurements the visitor entered. Hosting, fonts and user-chosen messaging apps have their own ordinary network requests/policies.
+Assessment answers exist only in current-page memory and disappear on reload or clear. No assessment backend or marketing analytics is installed. Language, motion and lunch-bag preferences use local storage. The weekly habit planner is saved locally only by explicit opt-in and excludes the assessment profile; its one-time handoff uses tab session storage for two preference fields only. Downloads are generated locally; full snapshots can contain measurements the visitor entered. Hosting, fonts and user-chosen messaging apps have their own ordinary network requests/policies.
 
 This is a prelaunch experience and planning prototype. The proposed pilot is Kozhikode lunch, Monday–Saturday, at least 24 hours ahead in India Standard Time. It does not reserve capacity, charge customers or activate subscriptions. Pricing, service zones, staff credentials, support contacts, terms and fulfillment must be finalized before commerce. See `DESIGN-AND-LAUNCH.md`.
 

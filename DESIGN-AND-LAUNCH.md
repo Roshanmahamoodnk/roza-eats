@@ -18,6 +18,7 @@ The first audience is busy adults in Kozhikode who enjoy local food and want les
 | Trust | Why should I believe this? | Primary sources, transparent estimates, visible assumptions and prelaunch status. |
 | Relevance | Would it fit me? | Eight short assessment steps with why each question matters; no signup before results. |
 | Value | I learned something useful. | First habit, preference-based ideas, optional broad maintenance estimate and general activity/rest guidance. |
+| Practice | Can I start now? | An optional seven-day habit planner with a chosen meal time, honest check-ins, local save and printable export; no signup or health score. |
 | Conversation | Can someone help me? | One contact destination, reviewable message and explicit choice to send. |
 
 ## Visual and motion direction
@@ -64,3 +65,14 @@ Test one material change at a time, such as “Find my food routine” versus �
 - Native Malayalam editorial review before paid campaigns, especially nuanced nutrition wording.
 
 The current site openly describes prelaunch limits while providing the complete exploration interface.
+
+
+## Continuation checkpoint · 6 November 2026
+
+The assessment-to-practice journey is implemented in `my-week.html`. It carries only a habit and meal preference into a seven-day plan, offers optional device saving, and never creates a delivery booking, health score or automatic reminder. Existing Nano Banana assets and blank contact configuration are preserved.
+
+Verification: 25 calculation, scheduling, assessment and planner tests; browser checks of handoff, save/reload/removal, check-ins, date-change confirmation/cancel, narrow English/Malayalam layouts and Malayalam TXT download. Print CSS and the native print control are present; generated PDF output remains unverified.
+
+A reproducible planner issue was found during QA: after a date change, the reset-confirmation panel was below the viewport (top about 1,575 px in a 936 px viewport). The update explicitly scrolls the confirmation into view before focusing it; recheck placed the panel within the viewport and cancel preserved existing entries. A one-off browser-control click during assessment scrolling opened the nearby evidence link; the cause was not established. Returning to the result and clicking the same verified planner link succeeded, carrying the correct habit and meal. This is not evidence of a site outage.
+
+Next resumable work: verify the deployment of this commit, then stop if it succeeds and no new defect or instruction exists. Commerce and enquiries continue to wait for the outstanding business inputs above. Do not create extra changes merely for continuity checks.
