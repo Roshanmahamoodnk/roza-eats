@@ -22,12 +22,12 @@ This is a buildless static website. No package installation is required.
 
 ```sh
 python3 -m http.server 8000
-node --test nutrition.test.cjs routine.test.cjs week.test.cjs
+node --test nutrition.test.cjs routine.test.cjs week.test.cjs scroll-lab.test.cjs
 ```
 
 Open http://localhost:8000. GitHub Pages serves `main` from `/ (root)`.
 
-The 25 automated checks cover ingredient calculations, component scaling, valid preferences, bag validation, exact 24-hour IST cutoffs, Sunday exclusions, repeat schedules, maintenance-estimate guards, dietary recommendations, walking arithmetic and contact configuration, calendar boundaries, future-day check-in restrictions, saved-state validation and private-field exclusion. Browser QA covers desktop and narrow layouts, Malayalam, normal and review-first assessment paths, portion controls, meal customization, schedule review and reset. Snapshot download and file content are verified in a standalone browser tab. Planner QA additionally covers assessment handoff, optional save/reload/removal, date-change confirmation and cancel, future-day controls, and 390/360 px English/Malayalam layouts. The Malayalam planner TXT download was inspected. A print stylesheet and native print control are included; browser-to-PDF output has not been independently verified.
+The 29 automated checks cover ingredient calculations, component scaling, valid preferences, bag validation, exact 24-hour IST cutoffs, Sunday exclusions, repeat schedules, maintenance-estimate guards, dietary recommendations, walking arithmetic and contact configuration, calendar boundaries, future-day check-in restrictions, saved-state validation and private-field exclusion. Browser QA covers desktop and narrow layouts, Malayalam, normal and review-first assessment paths, portion controls, meal customization, schedule review and reset. Snapshot download and file content are verified in a standalone browser tab. Planner QA additionally covers assessment handoff, optional save/reload/removal, date-change confirmation and cancel, future-day controls, and 390/360 px English/Malayalam layouts. The Malayalam planner TXT download was inspected. A print stylesheet and native print control are included; browser-to-PDF output has not been independently verified.
 
 ## Contact activation
 
@@ -56,3 +56,12 @@ Brand names and artwork remain with their respective owners; no open-source lice
 The latest redesign makes the first action personal: choose a daily difficulty, receive a short relevant reply, then carry that choice into the assessment. Homepage meals can be filtered or swiped; each opens its existing recipe in the meal studio. The narrative's day widget follows the three service steps while scrolling. The shared “Ask Roza” dialog explains delivery, professional support and contact status without inventing live availability.
 
 Verification for this upgrade: all 25 existing tests passed; all changed scripts parsed; local assets and HTML anchor targets checked. Browser checks covered desktop and narrow English/Malayalam layouts, 360/390 px phone frames, meal filters and builder portion/protein changes, challenge handoff, ordinary results, health/ingredient review routes, weekly habit handoff, dialog close/Escape/focus return, motion preference and root scroll behaviour. Existing Nano Banana files, calculations, scheduling rules and blank contact destinations were preserved.
+
+
+## Measured-food scroll story · 7 November 2026 (IST)
+
+The homepage now includes a three-scene sticky measurement board after the visitor's daily difficulty: oil, cooked brown rice and the protein/energy trade-off. Oil fill, grams, energy counters, a portion ruler and meal-image movement follow native scrolling. Chapter buttons let visitors skip ahead; the final scene opens M2 in the existing meal studio. The hero and kitchen photo have restrained movement. No scrolling is intercepted, and no animation library or tracking was added.
+
+`scroll-lab-model.js` derives independent examples from the existing ingredient data: 10→5 g added coconut oil changes oil energy by 44.6 kcal; 200→150 g cooked brown rice changes M2 by 61.5 kcal; 100→150 g chicken plus proportional marinade adds 15.67 g protein and 92.25 kcal. These are illustrations, not tested product improvements, personal portions or cumulative savings. The evidence page documents assumptions and source records.
+
+All 29 tests pass. Additional browser checks cover all three scenes, changing counters, desktop/360/390 px layouts, Malayalam, chapter navigation, keyboard activation, motion-off endpoint values, expandable methods and the M2 studio handoff. Static equivalent explanations remain available to assistive technology; rapidly changing counters are excluded from announcements. Existing Nano Banana assets and launch/contact configuration are unchanged.

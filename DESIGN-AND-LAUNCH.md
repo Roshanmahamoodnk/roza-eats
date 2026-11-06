@@ -13,6 +13,7 @@ The first audience is busy adults in Kozhikode who enjoy local food and want les
 | Stage | Visitor thought | Interface and next action |
 | --- | --- | --- |
 | Recognition | This sounds like my day. | Familiar-food hero and three ordinary-day moments; start with timing, portions or tea-time habits. |
+| Measurement | What changes when a portion changes? | A scroll-driven oil/rice/protein story with independent calculations, visible assumptions and an M2 studio handoff. |
 | Understanding | What does Roza do? | Understand, plan, schedule, review; explain nutrition, chef and fitness roles as the service model. |
 | Appetite | Can I keep food I enjoy? | Six familiar meals, customization, portions and ingredients. |
 | Trust | Why should I believe this? | Primary sources, transparent estimates, visible assumptions and prelaunch status. |
@@ -102,3 +103,28 @@ Next resumable step: inspect the latest branch and this redesign's Pages run, fi
 ### Final live hover correction
 
 The first redesign deployment completed successfully (commit `e7eba33a0665de42cd7c19f9ae0468c6ad648fed`, Pages run `42279666345`). The final public browser check then exposed a hero-button hover contrast issue: the inherited generic button hover turned its background dark while the orange button retained dark text. Added an explicit light text colour for that hover state and bumped the shared stylesheet URL. This is a bounded repair after the first deployment finished, not an optional push during an active deployment. Verify the latest Pages run and the public button before closing the task.
+
+
+## Measured-food motion upgrade · 7 November 2026 (IST)
+
+Authorized scope: make scrolling explain real, measured food choices through motion and numbers. Started from verified remote main `fd9eb2a1e7e036535c536b9603871fb5dd07ea17`; the earlier experience and hover fix were already deployed. This is new requested work, not a continuation of an unresolved Pages failure.
+
+Implemented three independent scenes in `scroll-lab.css`, `scroll-lab.js` and `scroll-lab-model.js`. Desktop pairs flowing explanation with a sticky board; phones pin a shorter board above the current explanation. Oil uses an accurately aligned vessel diagram; rice uses a gram ruler and an explicitly illustrative meal photo; chicken shows both protein and energy increases. Native scrolling, chapter buttons, short bilingual copy and an existing meal-studio CTA keep the story usable. Reduced motion uses final static values and removes image movement/transitions. The existing routine, planner, evidence/privacy safeguards and Nano Banana imagery are preserved.
+
+### Evidence and boundaries
+
+- Oil: hypothetical 10→5 g added coconut oil, 892 kcal/100 g, 44.6 kcal less from this oil alone. Assumes all oil is retained and consumed. Not an actual Roza reformulation or restaurant comparison.
+- Rice: M2 cooked brown rice 200→150 g, 123 kcal/100 g, 61.5 kcal difference; chicken, vegetables and curd unchanged. Rice's protein and fibre also decrease.
+- Chicken: M2 100→150 g cooked chicken with proportional marinade, approximately +15.67 g protein and +92.25 kcal. Rice remains 150 g, vegetables 120 g, curd 80 g.
+- These examples are independent; differences are not added together. No health score, disease/weight-loss forecast, universal protein target or guaranteed customer outcome.
+- WHO's current healthy-diet guidance and FAO's food-energy factors were consulted. Exact example calculations use the existing USDA-linked reference model, whose finished-product validation is still outstanding. Detailed formulas and links are published at `evidence.html#measure-story`.
+
+### Observed issue, repair and verification
+
+A narrow-screen chapter jump initially left the requested explanation below the intended reading area. The first jump calculation used the board's current viewport bottom, which changes before the board reaches its sticky position. It now targets the CSS sticky top plus the board's height, providing a stable reading position. The initial observation also involved native smooth-scroll settling, so the precise contribution of browser timing is not established. [MDN documents that bounding rectangles are viewport-relative](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) and [scrollTo uses document coordinates](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo). After the repair, a 360 px jump from the top to Rice and Malayalam Protein navigation reached their matching content and active scene. Oil tick marks were aligned to the same fill formula during visual review.
+
+One read-only browser observation returned a transport error (`http/request failed` to the browser service). Retrying that read succeeded without any site change. This is evidence of a transient tool transport failure, not a website outage; no deeper cause was established. Browser-extension metadata errors were separate from the site's scripts.
+
+Verification: 29 automated calculation/scheduling tests passed, including four new independent-example tests. Browser checks covered desktop, 390/360 px phones, English/Malayalam, all scene endpoints, native scroll, chapter buttons, keyboard activation, motion-off values, method disclosure and M2 studio navigation. No changes were made to contacts, prices, delivery capacity or recipe assets.
+
+Next resumable step: publish this single checked tree, finish its Pages run, and confirm the public measurement story. The final task result records the deployed commit/run; do not push optional documentation while deployment is active. Launch still depends on the previously listed business inputs.
