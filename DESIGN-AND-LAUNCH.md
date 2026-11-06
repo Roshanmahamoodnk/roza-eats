@@ -128,3 +128,34 @@ One read-only browser observation returned a transport error (`http/request fail
 Verification: 29 automated calculation/scheduling tests passed, including four new independent-example tests. Browser checks covered desktop, 390/360 px phones, English/Malayalam, all scene endpoints, native scroll, chapter buttons, keyboard activation, motion-off values, method disclosure and M2 studio navigation. No changes were made to contacts, prices, delivery capacity or recipe assets.
 
 Next resumable step: publish this single checked tree, finish its Pages run, and confirm the public measurement story. The final task result records the deployed commit/run; do not push optional documentation while deployment is active. Launch still depends on the previously listed business inputs.
+
+## Award-reference design pass · 7 November 2026 (IST)
+
+Started from remote main `5b7248baa18df088c4ef915401e748d423571fe3`; the existing measurement story was published successfully. The requested visual reference board was created and inspected before source edits. It uses attributed CSSDA gallery stills for research only. No reference image, logo, copy or layout is shipped with Roza. Existing Nano Banana 2.1 assets remain unchanged.
+
+### Reference → original Roza decision
+
+| Reference | Studied idea and scope | Roza implementation |
+| --- | --- | --- |
+| [Hungry Tiger / Artemii Lebedev](https://www.cssdesignawards.com/sites/hungry-tiger/47670/) | Food as the focal object; strong typographic hierarchy and image reveals. Award stills and live product staging were inspected. | An original three-chapter Kerala ingredient story, with familiar components, measured preparation and a finished meal. Each chapter has a direct next action. |
+| [Promeat / Chipsa](https://www.cssdesignawards.com/sites/promeat/47856/) | The award description identifies an editorial/WebGL sequence focused on product and craft. | Short preparation notes beside existing Roza photography concepts; native image crossfades instead of a WebGL scene. |
+| [Root Food / ET Studio](https://www.cssdesignawards.com/sites/root-food/44099/), [creator interview](https://www.commarts.com/webpicks/root-food) | The creator describes horizontal desktop chapters, vertical mobile storytelling, a recipe-book rhythm and compressed images. | A linear mobile journey with short chapters, plus “Your day / Your plate / Your week” orientation across tools. The first action follows the result immediately; the habit precedes configuration. |
+| [More Nutrition / FUTURE THREE](https://www.cssdesignawards.com/sites/more-nutrition/48168/) | Confident product staging and colour in a self-initiated Matcha Latte concept, not a verified production checkout. | Expressive desktop image staging; a simpler mobile composition with manual controls. Motion is optional, without an animation/rendering dependency. The mobile simplification is Roza's design decision, not a claimed observation of that site's complete flow. |
+
+### Complete journey and interaction choices
+
+- Homepage: the former late kitchen panel becomes the ingredient story before `#portions`. Each of the three chapters connects to the assessment, measured example or M2 builder. The working measurement story and original numerical assumptions are unchanged.
+- Assessment: non-navigational route context avoids accidentally discarding in-memory answers. Existing practice handoff moves directly after the first habit/energy block, with the same snapshot download handler available alongside it.
+- Meal studio: native anchor links jump to the base, protein, sides and summary; target groups can receive keyboard focus. All ingredient choices remain visible. The lunch review links to habit practice, explicitly retaining the lunch bag separately and making no booking claim.
+- Weekly practice: only a fresh valid assessment handoff triggers the welcome note; saved plans retain precedence. The current habit is shown before date/time settings. No extra profile fields are copied or stored.
+- Accessibility/performance: native scrolling, requestAnimationFrame only when needed, offscreen observer gating, reduced-motion media query plus existing preference control, visible keyboard focus, pressed-state chapter controls, normal document reading without JavaScript, original images with concept captions and reserved image geometry. Mobile chapters are user-selected; desktop chapters follow scroll without announcing every change.
+
+### Observations, repair and verification
+
+Promeat's live site could not render in the cloud browser. Captured console output explicitly reported `THREE.WebGLRenderer: A WebGL context could not be created` with GL vendor/renderer disabled. This is a limitation of that inspection environment, not evidence that the reference is generally down. Its CSSDA imagery and description were used instead; its live motion was not claimed as verified. This reinforced using native DOM/CSS for Roza.
+
+A desktop chapter-button jump was aligned to the fixed stage top during QA so the requested chapter begins beside its photo rather than in the middle of the viewport. Keyboard activation and the active chapter/image were subsequently verified. Two QA tools briefly became unavailable when the execution environment was marked unavailable. Once it was available again, a read-only Git check confirmed all edits were retained; the interrupted browser read was resumed. No external mutation was in flight. The underlying environment interruption cause was not established, and no site outage is inferred.
+
+Verification: all 29 existing calculation, calendar, scheduling and privacy tests passed; changed JavaScript parses and Git whitespace checks pass. Browser QA covers desktop, 360/390 px phone frames, English/Malayalam with no horizontal document overflow, chapter buttons and keyboard activation, motion-off static image changes, the original measurement-story controls, builder ingredient changes and focused summary navigation, the professional-review assessment, earlier snapshot download, fresh weekly handoff, a verified time update, and the separate schedule-review-to-habit link. Source-backed nutrition formulas, launch disclosures and blank contact configuration are unchanged. Malayalam still needs native editorial sign-off before a commercial launch; no conversion uplift is asserted.
+
+Next resumable step: publish this checked tree once, finish its GitHub Pages run, and inspect the public homepage and journey controls. The final task result records the actual commit and deployment outcome. Do not push optional follow-up notes while the deployment runs. Missing business launch inputs remain listed above.
