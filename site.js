@@ -4,7 +4,7 @@
   function read(k){try{return localStorage.getItem(k);}catch(e){return null;}}
   function write(k,v){try{localStorage.setItem(k,v);}catch(e){}}
   var lang=read('roza-language')==='ml'?'ml':'en';
-  var reduced=read('roza-motion')==='off'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduced=read('roza-motion')!=='on'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var R=window.RozaRoutine,N=window.RozaNutrition,portion=150;
   function L(en,ml){return lang==='ml'?ml:en;}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -42,7 +42,7 @@
   var progress=document.querySelector('.scroll-progress'),scheduled=false;
   function scroll(){if(scheduled)return;scheduled=true;requestAnimationFrame(function(){var d=document.documentElement.scrollHeight-window.innerHeight;if(progress)progress.style.width=(d>0?window.scrollY/d*100:0)+'%';scheduled=false;});}
   window.addEventListener('scroll',scroll,{passive:true});
-  if('IntersectionObserver' in window){root.classList.add('motion-ready');var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el);});}
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('is-visible');});
   window.RozaSite={L:L,escape:esc,foodCard:foodCard,translate:translate};
   translate();walk();scroll();
 })();

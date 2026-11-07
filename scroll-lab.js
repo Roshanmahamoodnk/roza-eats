@@ -35,33 +35,11 @@ function render(i,p){
   stage.style.setProperty('--energy-bar',`${v.whole.kcal/650*100}%`);
  }
 }
-function anchor(){
- // Use the intended sticky position, even when a chapter button is clicked before the board pins.
- return mobile.matches?parseFloat(getComputedStyle(stage).top)+stage.offsetHeight+24:Math.min(innerHeight*.54,500);
+// Deliberate tab selection replaces scroll-driven numbers and parallax.
+function select(i){
+ render(i,1);
+ chapters.forEach((chapter,j)=>{chapter.hidden=j!==i;});
 }
-function update(){
- pending=false;
- const off=reduced();
- if(visible){
-  const y=anchor(),bounds=chapters.map(el=>el.getBoundingClientRect());
-  let i=0;for(let j=1;j<bounds.length;j++)if(bounds[j].top<=y)i=j;
-  const p=off?1:M.clamp((y-bounds[i].top)/Math.max(1,bounds[i].height*.45));
-  render(i,p);
- }
- if(hero){const rect=hero.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight){const p=M.clamp(scrollY/innerHeight);hero.style.setProperty('--hero-y',off?'0px':`${-p*24}px`);hero.style.setProperty('--hero-turn',off?'0deg':`${p*12}deg`);}}
- if(labs){const rect=labs.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight)labs.style.setProperty('--labs-y',off?'0px':`${(M.clamp((innerHeight-rect.top)/(innerHeight+rect.height))-.5)*24}px`);}
-}
-function schedule(){if(!pending){pending=true;requestAnimationFrame(update);}}
-buttons.forEach(button=>button.addEventListener('click',()=>{
- const chapter=chapters.find(el=>el.dataset.measureScene===button.dataset.measureJump);
- const readingLine=mobile.matches?anchor():parseFloat(getComputedStyle(stage).top);
- const top=scrollY+chapter.getBoundingClientRect().top-readingLine+2;
- window.scrollTo({top,behavior:reduced()?'instant':'smooth'});
-}));
-if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule();},{rootMargin:'200px 0px'}).observe(lab);
-window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});
-document.addEventListener('roza:motion',schedule);document.addEventListener('roza:language',schedule);
-systemMotion.addEventListener('change',schedule);
-if('ResizeObserver'in window)new ResizeObserver(schedule).observe(lab);
-schedule();
+buttons.forEach((button,i)=>button.addEventListener('click',()=>select(i)));
+select(0);
 })();

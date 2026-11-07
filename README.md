@@ -8,7 +8,7 @@ An English–Malayalam experience for familiar Kerala meals, thoughtful portions
 
 ## Experience
 
-- `index.html`: interactive daily-life prompts, swipeable/filterable six-meal discovery, a scroll-linked routine story, live portion estimates and Roza Labs.
+- `index.html`: interactive daily-life prompts, swipeable/filterable six-meal discovery, a calm, manually selected routine story, live portion estimates and Roza Labs.
 - `routine.html`: eight conversational steps with answer-specific acknowledgements, an evolving visual companion, expandable explanations, optional body measurements, preference-based meal ideas and a downloadable summary.
 - `menu.html`: six Kerala meal ideas, dietary filters, customizable bowls, ingredient-based reference estimates, lunch bag and proposed next-day schedule.
 - `my-week.html`: one habit, seven dated check-ins, an optional device-only save, bilingual download and print layout. Assessment handoff carries only a habit and meal preference.
@@ -16,7 +16,7 @@ An English–Malayalam experience for familiar Kerala meals, thoughtful portions
 
 `experience.css` and `experience.js` provide the shared app-style navigation, contextual help dialog, meal discovery and visual layer across all five routes. Help is a clearly labelled guide, not a simulated live nutritionist. It never submits information or claims a callback is booked.
 
-The responsive design preserves the existing Nano Banana 2.1 assets and adds a forest-green/ivory/lime identity with a warm orange accent, scroll reveals, sticky navigation and a persistent navigation dock, English/Malayalam switching and reduced-motion controls. AI images are labelled concepts, not customers, staff or verified serving photographs.
+The responsive design preserves the existing Nano Banana 2.1 assets and adds a forest-green/ivory/lime identity with a warm orange accent, always-visible content, sticky navigation and a persistent navigation dock, English/Malayalam switching and reduced-motion controls. AI images are labelled concepts, not customers, staff or verified serving photographs.
 
 ## Run and validate
 
@@ -75,3 +75,7 @@ The ingredient story now comes before the measurement board: familiar components
 A quiet “Your day / Your plate / Your week” marker connects assessment, meal studio and habit practice. The assessment offers the existing weekly handoff and a snapshot download immediately after the first recommendation. Ingredient jump links make the long builder easier to navigate, and the schedule review offers a clearly separate habit-planner link. The weekly page acknowledges a fresh assessment handoff and puts the chosen habit before its date/time settings.
 
 `journey.css` and `journey.js` add approximately 10.5 KB uncompressed, reuse the Nano Banana assets and introduce no library, WebGL, tracking or additional image files. All 29 existing tests pass. Browser checks cover desktop and 360/390 px frames, English/Malayalam, keyboard chapter activation, motion-off behaviour, ingredient changes and review jumps, the review-first assessment, the new snapshot-download placement, fresh habit handoff, time updates and the separate lunch-plan-to-habit link. See the design notes for reference attribution and inspection limits.
+
+## Calm interaction revision - 7 November 2026
+
+Following visitor feedback, measurement and ingredient stories now change only through their buttons. Scroll-linked counters, image parallax, text reveals and pinned storytelling panels are removed; chapters use natural height rather than extended scroll distances. Motion defaults to off, while selection, language, calculations and planner controls remain available. Earlier motion descriptions above document superseded iterations.

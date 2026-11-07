@@ -14,3 +14,22 @@
 html[lang="ml"] h1,html[lang="ml"] h2,html[lang="ml"] h3{overflow-wrap:anywhere}
 .home-hero>*,.section-top>*,.trainer-grid>*,.trainer-step>div,.assessment-wrap>*,.field-row>*{min-width:0}
 @media(max-width:600px){html[lang="ml"] .trainer-intro h2{font-size:33px}html[lang="ml"] .subpage-head h1{font-size:34px}html[lang="ml"] .coach-aside h1{font-size:29px}html[lang="ml"] .coach-shell h2{font-size:27px}.menu-status .chip{white-space:normal}}
+
+/* Calm reading mode: no scroll-driven reveals, pinning, zoom, or forced travel. */
+html{scroll-behavior:auto!important}
+html body .reveal,html body .exp-story-step{opacity:1!important;transform:none!important;transition:none!important}
+html body .measure-stage,html body .plate-stage,html body .exp-story-visual{position:static!important}
+html body .measure-chapter{min-height:0;padding:20px 0 30px;scroll-margin-top:110px}
+html body .measure-chapter[hidden]{display:none!important}
+html body .plate-chapter{min-height:0;padding:25px 0}
+html.plate-ready body .plate-chapter:not(.is-active){display:none}
+html body .measure-panel,html body .plate-frame{transition:none!important;transform:none!important}
+html body .exp-hero-visual,html body .exp-labs figure,html body .measure-food-photo,html body .measure-protein-photo{transform:none!important}
+html body .exp-photo-stamp{transform:rotate(11deg)!important}
+html body .measure-scroll-cue,html body .measure-stage-progress,html body .scroll-progress{display:none}
+html body .ui-enter *,html body .food-photo-new,html body .menu-editorial-photo img{animation:none!important;transform:none!important;transition:none!important}
+html body .btn:hover,html body .btn:active,html body .exp-intent-options button:hover{transform:none!important}
+html body .exp-story-step{min-height:0}
+@media(max-width:800px){html body .measure-stage{margin-bottom:22px}}
+
+html body .exp-how-sticky{position:static}

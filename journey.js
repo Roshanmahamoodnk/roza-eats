@@ -14,23 +14,7 @@ function choose(next){
  frames.forEach((f,i)=>{f.classList.toggle('is-active',i===next);f.setAttribute('aria-hidden',String(i!==next));});
  index.textContent='0'+(next+1);
 }
-function update(){
- pending=false;
- if(!visible||narrow.matches||reduced())return;
- const y=Math.min(innerHeight*.48,400);
- let next=0;chapters.forEach((c,i)=>{if(c.getBoundingClientRect().top<=y)next=i;});
- if(next!==selected)choose(next);
-}
-function schedule(){if(!pending){pending=true;requestAnimationFrame(update);}}
-buttons.forEach((b,i)=>b.addEventListener('click',()=>{
- choose(i);
- if(!narrow.matches&&!reduced())window.scrollTo({top:scrollY+chapters[i].getBoundingClientRect().top-parseFloat(getComputedStyle(story.querySelector('.plate-stage')).top)+2,behavior:'instant'});
-}));
-if('IntersectionObserver' in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule();},{rootMargin:'100px'}).observe(story);
-else visible=true;
+// Images change only when a visitor selects a chapter; never move the viewport.
+buttons.forEach((button,i)=>button.addEventListener('click',()=>choose(i)));
 root.classList.add('plate-ready');choose(0);
-window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});
-document.addEventListener('roza:motion',schedule);document.addEventListener('roza:language',schedule);
-narrow.addEventListener('change',schedule);motion.addEventListener('change',schedule);
-schedule();
 })();
