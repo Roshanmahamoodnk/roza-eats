@@ -79,3 +79,5 @@ A quiet “Your day / Your plate / Your week” marker connects assessment, meal
 ## Calm interaction revision - 7 November 2026
 
 Following visitor feedback, measurement and ingredient stories now change only through their buttons. Scroll-linked counters, image parallax, text reveals and pinned storytelling panels are removed; chapters use natural height rather than extended scroll distances. Motion defaults to off, while selection, language, calculations and planner controls remain available. Earlier motion descriptions above document superseded iterations.
+
+Mobile follow-up: the meal builder still checked a legacy `reduced-motion` class while the shared site uses `motion-off`. Its four add/edit/navigation actions now use immediate native scrolling, consistent with the calm experience.

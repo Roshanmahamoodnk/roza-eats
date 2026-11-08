@@ -114,9 +114,9 @@
     if(editingId) {bag=bag.map(x=>x.id===editingId?{...bowl,id:x.id,quantity:x.quantity}:x);editingId=null;}
     else {const existing=bag.find(x=>N.signature(x)===N.signature(bowl));if(existing){if(existing.quantity>=10){toastMessage('Maximum 10 of one combination in this preview.','ഈ മാതൃകയിൽ ഒരു കോമ്പിനേഷൻ പരമാവധി 10.');return;}existing.quantity++;}else {if(bag.length>=12){toastMessage('Your preview can hold 12 combinations. Edit an existing bowl.','12 കോമ്പിനേഷനുകൾ വരെ ചേർക്കാം. നിലവിലുള്ള മീൽ മാറ്റുക.');return;}bag.push({...bowl,id:'b'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),quantity:1});}}
     persist();renderPlan();renderBowlSummary();toastMessage('Your bowl is in the lunch bag. Choose a delivery day below.','മീൽ ലഞ്ച് ബാഗിൽ ചേർത്തു. താഴെ ദിവസം തിരഞ്ഞെടുക്കാം.');
-    $('#plan').scrollIntoView({behavior:document.documentElement.classList.contains('reduced-motion')?'auto':'smooth'});
+    $('#plan').scrollIntoView({behavior:'auto'});
   }
-  function chooseMeal(id) {if(!preset[id])return;bowl={...defaults,...preset[id]};bowl.diet=bowl.protein==='soy'?'veg':bowl.protein==='egg'?'egg':'all';editingId=null;renderBuilder();$('#build').scrollIntoView({behavior:document.documentElement.classList.contains('reduced-motion')?'auto':'smooth'});}
+  function chooseMeal(id) {if(!preset[id])return;bowl={...defaults,...preset[id]};bowl.diet=bowl.protein==='soy'?'veg':bowl.protein==='egg'?'egg':'all';editingId=null;renderBuilder();$('#build').scrollIntoView({behavior:'auto'});}
   function changeDiet(value) {bowl.diet=value;if(value==='veg')bowl.protein='soy';if(value==='egg'&&!['egg','soy'].includes(bowl.protein))bowl.protein='egg';renderBuilder();}
   function setLevel(value) {bowl.level=value;bowl.baseGrams=value==='smaller'?100:150;bowl.vegGrams=value==='smaller'?180:120;bowl.proteinLevel=value==='extra'?1.5:1;renderBuilder();}
   function openDialog(html) {$('#order-dialog-content').innerHTML=html;$('#order-dialog').showModal();document.body.classList.add('modal-open');$('#order-dialog-close').focus();}
@@ -152,14 +152,14 @@
     if(b.hasAttribute('data-model')){showModel();return;}
     if(b.dataset.remove){bag=bag.filter(x=>x.id!==b.dataset.remove);if(editingId===b.dataset.remove)editingId=null;persist();renderPlan();renderBowlSummary();return;}
     if(b.dataset.qty){bag=bag.map(x=>x.id===b.dataset.qty?{...x,quantity:Math.max(1,Math.min(10,x.quantity+Number(b.dataset.change)))}:x);persist();renderPlan();return;}
-    if(b.dataset.edit){const item=bag.find(x=>x.id===b.dataset.edit);if(item){bowl={...item};editingId=item.id;renderBuilder();$('#build').scrollIntoView({behavior:document.documentElement.classList.contains('reduced-motion')?'auto':'smooth'});}return;}
+    if(b.dataset.edit){const item=bag.find(x=>x.id===b.dataset.edit);if(item){bowl={...item};editingId=item.id;renderBuilder();$('#build').scrollIntoView({behavior:'auto'});}return;}
     if(b.dataset.orderSlot){slot=Number(b.dataset.orderSlot);renderPlan();return;}
     if(b.hasAttribute('data-download-plan')){downloadPlan();return;}
     if(b.hasAttribute('data-close-order'))$('#order-dialog').close();
   });
   $('#order-dialog-close').addEventListener('click',()=>$('#order-dialog').close());
   $('#order-dialog').addEventListener('close',()=>document.body.classList.remove('modal-open'));
-  $('#bag-float').addEventListener('click',()=>$('#plan').scrollIntoView({behavior:document.documentElement.classList.contains('reduced-motion')?'auto':'smooth'}));
+  $('#bag-float').addEventListener('click',()=>$('#plan').scrollIntoView({behavior:'auto'}));
   document.addEventListener('roza:language',()=>{renderPairings();renderBuilder();renderMoments();renderPlan();});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)renderPlan();});
   window.RozaBuilder={chooseMeal};
