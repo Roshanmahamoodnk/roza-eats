@@ -81,3 +81,11 @@ A quiet “Your day / Your plate / Your week” marker connects assessment, meal
 Following visitor feedback, measurement and ingredient stories now change only through their buttons. Scroll-linked counters, image parallax, text reveals and pinned storytelling panels are removed; chapters use natural height rather than extended scroll distances. Motion defaults to off, while selection, language, calculations and planner controls remain available. Earlier motion descriptions above document superseded iterations.
 
 Mobile follow-up: the meal builder still checked a legacy `reduced-motion` class while the shared site uses `motion-off`. Its four add/edit/navigation actions now use immediate native scrolling, consistent with the calm experience.
+
+### Human routine experience — 10 November 2026
+
+The ordinary-day homepage now connects a familiar Kozhikode lunch scene to a small first question, a proposed listen–plan–prepare–deliver–review service, the existing six-meal studio and a sustainable review rhythm. The assessment starts with the everyday obstacle, followed by area and goal; all eight stages and review safeguards remain. The optional eligible-adult result includes BMI with explicit limitations, not a health score.
+
+`care.html` is an optional bilingual education guide covering fatigue, skin changes, glucose/insulin/muscle, fatty liver, sleep and BMI. It links primary clinical sources and separates medical assessment from Roza's proposed food service. It does not collect symptoms, diagnose, request reports or open an enquiry. New fictional human and food concepts are labelled and compressed as WebP. Existing Nano Banana images and nutrition reference calculations are preserved. `human-routine.css` and `human-routine.js` provide the shared calm presentation and native health-panel deep links.
+
+Contact configuration remains deliberately blank. Prices, verified Roza contact, confirmed areas/fees, launch date/capacity and professional availability remain launch dependencies. See `design-qa.md` for this pass's verification and limitations.
